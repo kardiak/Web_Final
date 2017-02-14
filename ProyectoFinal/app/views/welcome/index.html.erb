@@ -1,0 +1,79 @@
+<% if user_signed_in? %>
+	<div class="jumbotron">
+		<div class="container" align="center">
+			<h2>
+					Bienvenido <%= current_user.first_name %>
+			</h2>
+			<p>Como administrador usted puede crear, modificar y eliminar usuarios, roles, servicios y servicios de autenticación. Si lo desea, también puede asignar y eliminar roles a los usuarios.</p>
+		</div>
+	</div>
+
+	<div class="container">
+        <div class="col-md-3">
+            <div class="well">
+				<h3><%= link_to "Usuarios", user_registration_path %></h3>
+				<img src="<%= asset_path 'user.png'  %>" class="img-responsive" height="150" width="50" >
+				<p>Esta entidad representa a los posibles usuarios globales en la institución.</p>			
+			</div>
+		</div>
+		<div class="col-md-3" >
+			<div class="well">
+				<h3><%= link_to "Roles", rols_path %></h3>
+				<img src="<%= asset_path 'icon.png'  %>" class="img-responsive" height="150" width="50" >
+				<p>Esta entidad representa los tipos de roles o cargos que un usuario puede tener o desempeñar en la organización. </p>
+			</div>
+		</div>
+		<div class="col-md-3" >
+			<div class="well">
+				<h3><%= link_to "Servicios", services_path %></h3>
+				<img src="<%= asset_path 'services.jpg'  %>" class="img-responsive" height="150" width="50" >
+				<p>Esta entidad representa un servicio o sistema que utiliza al servidor de autenticación. De esta manera, un usuario puede estar ligado a un servicio de autenticación para tener una contraseña específica para dicho servicio.</p>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="well">
+				<h3><%= link_to "Configuracion de servicios", useraservices_path %></h3>
+				<img src="<%= asset_path 'uservices.png'  %>" class="img-responsive" height="150" width="50" >
+				<p>Esta entidad liga usuarios y servicios de autenticación. Esta entidad le permite a un usuario tener formas individuales para autenticarse en diferentes servicios.</p>
+			</div>
+		</div>
+	</div>
+   
+    
+<%else%>
+<center>
+	<div id="login-overlay" class="modal-dialog" >
+        <div class="col-xs-9" align="content">
+            <div class="well">
+				<h3>Autenticador</h3>
+				<img src="<%= asset_path 'images.jpg'  %>" class="img-responsive">
+				<p>Con este sistema se pueden desarrollar otros sistemas que utilicen dicho servicio para no tener que guardar datos personales o contraseñas.</p>
+				
+				<%= link_to "Iniciar sesion", new_user_session_path,class:"btn btn-primary" %>
+			</div>
+		</div>
+	</div>
+</center>
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<%end%>
+
+
+
+	

@@ -1,0 +1,33 @@
+<%= form_for(@rol) do |f| %>
+		<% @rol.errors.full_messages.each do |message|%>
+			<div class="be-red white top-space">
+				* <%= message %>
+			</div>
+		<%end%>	
+<table>
+	<tbody>
+		<tr>
+			<td>
+				<%= f.text_field :name, placeholder: "nombre del rol",class:"form-control" %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.text_field :code, placeholder: "Codigo",class:"form-control"%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.submit "Guardar",class:"btn btn-success"%> <%= link_to "Cancelar", rols_path, class:"btn btn-primary" %>
+			</td>
+		</tr>
+
+	</tbody>
+
+</table>
+
+<%end%>
+
+
+	<br>
+	<br><br><br><br><br><br><br><br><br><br>

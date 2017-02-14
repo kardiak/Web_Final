@@ -1,0 +1,41 @@
+
+<div class="container">
+<center><h2>Servicios con autenticacion especifica </h2></center>
+<center> <%= link_to "Nuevan configuracion", new_useraservice_path ,class:"btn btn-primary"%></center>
+    <table class="table table-striped">
+        <tbody>
+        <!-- Aplicadas en las filas -->
+	        <tr>
+	            <th>id de configuracion</th>
+	            <th>id de servicio </th>   
+	            <th>nombre de usuario</th>
+	            <th></th>
+	            <th></th>            
+	        </tr>
+	         <% cont=0 %>
+				<% @useraservices.each do |f| %>
+				  <%cont=cont+1%>
+				<%end%>
+				<% if cont == 0 %>
+					<td>
+						<p>
+							No hay password especiales para algun rervicio
+						</p> 
+					</td>
+				<%else%>
+					<% @useraservices.each do |useraservice|%>
+						<tr>
+							<td><%= useraservice.id %></td>	
+							<td><%= @services.find(useraservice.service_id).name  %></td>
+							<td><%= useraservice.username %></td>
+							<td><%= link_to "Editar", edit_useraservice_path(useraservice),class:"btn btn-primary" %></td>
+							<td><%= link_to "Eliminar", useraservice,class:"red", method: :delete, class:"btn btn-danger" %></td>
+						</tr>
+					<%end%>
+				<%end%>
+    	</tbody>
+    </table>
+</div>
+
+<br>
+<br><br><br><br><br><br><br>

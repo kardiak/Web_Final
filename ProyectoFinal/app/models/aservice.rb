@@ -1,0 +1,2 @@
+class Aservice < ApplicationRecord
+end

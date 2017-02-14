@@ -1,0 +1,23 @@
+<%= form_for(@service) do |f| %>
+		<% @service.errors.full_messages.each do |message|%>
+			<div class="be-red white top-space">
+				<%= message %>
+			</div>
+		<%end%>
+<table>
+	<tbody>
+		<tr>
+			<td>
+				<%= f.text_field :name, placeholder: "Nombre del servicio",class:"form-control"%>
+			</td>
+		</tr>
+	</tbody>
+</table>
+			
+			<%= f.submit "Guardar",class:"btn btn-success" %>
+			<%= link_to "Cancelar", @service, class:"btn btn-primary" %>
+	<%end%>
+	<br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br>
+	

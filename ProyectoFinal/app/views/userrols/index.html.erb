@@ -1,0 +1,44 @@
+<% @userrols.inspect %><br>
+<br>
+<% @user.inspect %>
+<br><br>
+<%@rols.inspect %>
+
+
+<div class="container">
+<center><h2>Servicios con autenticacion especifica </h2></center>
+    <table class="table table-striped">
+        <tbody>
+        	<tr>
+        		<th>Usuario</th>
+        		<th>Rol</th>
+        		<th>Asignado por</th>
+        		<th></th>
+        	</tr>
+        	<% @userrols.each do |userrol|%>
+        		<tr>
+        			<td><%= @user.first_name%></td>
+        			
+        			<% @rols.each do |rolc|%>
+        				<%if rolc.id == userrol.rol_id %>
+        					<td><%= rolc.name %></td>
+        				    <%break%>
+        				<%end%>
+        			<%end%>
+
+        			<td><%= userrol.started_by%></td>
+					<td>
+						<%= link_to "Eliminar", userrol,class:"red", method: :delete, class:"btn btn-danger" %>	
+
+						
+					</td>
+        		</tr>
+        	<%end%>
+        	
+        
+    	</tbody>
+    </table>
+    <center>
+    	<%= link_to "Lista de usuarios", users_path, class:"btn btn-info" %>
+    </center>
+</div>

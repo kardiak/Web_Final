@@ -1,0 +1,24 @@
+<div class="container">
+<center><h2>Usuario</h2><br>
+</center>
+
+    <table class="table table-striped" align="center">
+        <tbody>
+	        <tr>
+	            <th >Nombre</th>
+	            <th>Apellidos</th>
+	            <th>Correo electronico</th>
+	            <th>Roles</th>           
+	        </tr>
+				<tr>
+					<td><%= @user.first_name %></td>
+					<td><%= @user.last_name %></td>
+					<td><%= @user.email %></td>	
+					<td>(aun no hay roles asignados)</td>				
+				</tr>
+					
+    	</tbody>
+    </table>
+    <br>
+    <%= link_to "Volver", users_path,class:"btn btn-info" %>
+</div>

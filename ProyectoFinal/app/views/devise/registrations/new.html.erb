@@ -1,0 +1,50 @@
+
+
+
+
+
+<div id="login-overlay" class="modal-dialog" align="center">
+  <div class="col-xs-10" align="center">
+    <div class="well">
+      <h2>Crear cuenta</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+        
+        <div class="field">
+          <%= f.label :"Nombre de usuario", autofocus: true,  class:"control-label"%><br />
+          <%= f.text_field :first_name, class:"form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :"Apellido", autofocus: true,  class:"control-label"%><br />
+          <%= f.text_field :last_name, class:"form-control"  %>
+        </div>
+
+
+        <div class="field">
+          <%= f.label :"Correo electronico" , autocomplete: "off",  class:"control-label" %><br />
+          <%= f.email_field :email, class:"form-control"  %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"Contraseña",  class:"control-label"%>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> caracteres como minimo)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"Confirmar contraseña",  class:"control-label" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Crear cuenta",class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

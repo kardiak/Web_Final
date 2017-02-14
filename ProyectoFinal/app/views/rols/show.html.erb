@@ -1,0 +1,23 @@
+
+<center><h2> Roles</h2></center>
+<center> 
+    <table >
+        <tbody>
+        <!-- Aplicadas en las filas -->
+	        <tr>
+	            <th>Rol: </th>
+	            <td><%= @rol.name%></td>
+	                           
+	        </tr>
+			<tr>
+				<th>Codigo: </th>	
+				<td><%= @rol.code %></td>
+			</tr>
+			
+    	</tbody>
+    </table>
+    <br><br>
+
+<div><%= link_to "Lista de Roles", rols_path,class:"btn btn-info" %></div>							
+
+</center>

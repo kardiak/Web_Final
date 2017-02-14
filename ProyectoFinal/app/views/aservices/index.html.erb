@@ -1,0 +1,9 @@
+<%= link_to "Nuevo servicio", new_aservice_path %>
+<% @aservices.each do |aservice| %>
+	<h1><%= link_to aservice.name,aservice %></h1>
+<div>
+	<%= aservice.ip %><br>
+	<%= aservice.protocol %> <br>
+	
+</div>
+<% end %>-

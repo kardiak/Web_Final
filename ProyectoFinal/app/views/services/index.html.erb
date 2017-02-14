@@ -1,0 +1,29 @@
+
+
+
+<div class="container">
+<center><h2> Servicios</h2><br>
+<%= link_to "Nuevo Rol", new_service_path ,class:"btn btn-primary"%>
+</center>
+
+    <table class="table table-striped" align="center">
+        <tbody>
+        <!-- Aplicadas en las filas -->
+	        <tr>
+	            <th >Nombre del servicio</th>
+	            <th></th>
+	            <th></th>           
+	        </tr>
+			<tr>
+				<% @services.each do |service| %>
+				<tr>
+					<td>
+						<%= link_to service.name, service %>	
+					</td>
+					<td><%= link_to "Editar", edit_service_path(service),class:"btn btn-primary" %></td>
+					<td><%= link_to "Eliminar", service,class:"red", method: :delete, class:"btn btn-danger" %></td>
+				</tr>
+				<%end%>		
+    	</tbody>
+    </table>
+</div>

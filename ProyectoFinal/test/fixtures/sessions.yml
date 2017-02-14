@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sid: 1
+  email: MyString
+  rols: MyString
+  created_at: 2017-01-20 10:38:39
+  closed_at: 2017-01-20 10:38:39
+  duration: 1
+  data: MyText
+
+two:
+  sid: 1
+  email: MyString
+  rols: MyString
+  created_at: 2017-01-20 10:38:39
+  closed_at: 2017-01-20 10:38:39
+  duration: 1
+  data: MyText

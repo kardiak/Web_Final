@@ -1,0 +1,41 @@
+<%= form_for(@useraservice) do |f| %>
+    <% @useraservice.errors.full_messages.each do |message|%>
+      <div class="be-red white top-space">
+        <%= message %>
+      </div>
+    <%end%>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <%= f.text_field :hint, placeholder:"Tip para contraseña",class:"form-control" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+             <%= f.password_field :password, placeholder:"Contraseña",class:"form-control"%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.password_field :password_confirm, placeholder:"Confirmar contraseña",class:"form-control" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.select :service_id, @services.all.collect{|c| [c.name, c.id]}, prompt: "Selecciona un Servicio",class:"form-control" %>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <%= f.submit "Guardar",class:"btn btn-success" %>
+            <%= link_to "Cancelar", useraservices_path, class:"btn btn-primary" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+<%end%>
+<br><br>
+<br><br>
+<br><br>
+<br><br>

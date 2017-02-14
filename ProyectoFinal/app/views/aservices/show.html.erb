@@ -1,0 +1,8 @@
+<h1>Servicio: <%= @aservice.name %></h1>
+<div>
+	<p>IP: </p><%= @aservice.ip %> <br>
+	<p>PROTOCOLO: </p><%= @aservice.protocol %>
+</div>
+<div><%= link_to "Editar", edit_aservice_path(@aservice) %> 
+<%= link_to "Eliminar", @aservice,class:"red", method: :delete %><br>
+<%= link_to "Volver", aservices_path %> </div>

@@ -1,0 +1,31 @@
+
+<div class="container">
+<center><h2> Roles</h2></center>
+<center> <%= link_to "Nuevo Rol", new_rol_path ,class:"btn btn-primary"%></center>
+    <table class="table table-striped">
+        <tbody>
+        <!-- Aplicadas en las filas -->
+	        <tr>
+	            <th>Rol</th>
+	            <th>Codigo </th>   
+	            <th></th>
+	            <th></th>            
+	        </tr>
+	            <% @rols.each do |rol| %>
+			<tr>
+				<td><%= link_to rol.name, rol %></td>	
+				<td><%= rol.code %></td>
+				<td><%= link_to "Eliminar", rol, class:"btn btn-danger", method: :delete %></td>
+				<td>
+					<%= link_to "Editar",edit_rol_path(rol),class:"btn btn-primary" %>
+				</td>
+				
+				
+			</tr>
+			
+		
+			<% end %>
+    	</tbody>
+    </table>
+</div>
+</div>

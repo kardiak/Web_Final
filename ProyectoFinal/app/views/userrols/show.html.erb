@@ -1,0 +1,25 @@
+b<div class="container">
+<center><h2>Servicios con autenticacion especifica </h2></center>
+    <table class="table table-striped">
+        <tbody>
+        	<tr>
+        		<th>Rols</th>
+        		<th>Usuario</th>
+        		<th>Creado por</th>
+        	</tr>
+        	<tr>
+        		<td><%= @rol.name %></td>        	
+        		<td><%= @user.first_name %> <%= @user.last_name %></td>
+        		<td><%= @userrol.started_by %></td>
+        	</tr>
+        	
+        
+    	</tbody>
+    </table>
+    <center>
+    	<%= link_to "Lista de usuarios", users_path, class:"btn btn-info" %>
+    </center>
+</div>
+
+<br
+<br><br><br><br><br><br><br><br><br>
